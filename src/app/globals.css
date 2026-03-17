@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
+@theme {
+  --color-faculty-red: #E63946;
+  --color-faculty-red-dark: #c1121f;
+  --color-cyber-black: #0B0C10;
+  --color-slate-900: #0d0e14;
+  --color-slate-800: #1a1b22;
+  --color-slate-700: #252733;
+  --color-slate-600: #333545;
+  --color-slate-400: #7882a0;
+  --color-slate-300: #a0a6b8;
+  --color-slate-100: #e8eaf0;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0B0C10;
+  --foreground: #e8eaf0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+::-webkit-scrollbar-thumb {
+  background: #E63946;
+  border-radius: 2px;
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Glowing red border hover effect */
+.glow-border {
+  border: 1px solid rgba(230, 57, 70, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glow-border:hover {
+  border-color: rgba(230, 57, 70, 0.55);
+  box-shadow: 0 0 24px rgba(230, 57, 70, 0.12), inset 0 0 24px rgba(230, 57, 70, 0.03);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #E63946 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Red glow text effect */
+.red-glow {
+  text-shadow: 0 0 40px rgba(230, 57, 70, 0.45);
+}
+
+/* Text selection */
+::selection {
+  background: rgba(230, 57, 70, 0.28);
+  color: #e8eaf0;
+}
+
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
 }
