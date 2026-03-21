@@ -90,11 +90,17 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed"
+            className="text-slate-200 text-base sm:text-lg max-w-4xl leading-relaxed"
           >
-            IWAC is the research and innovation arm of KDU's Faculty of Computing,
-            dedicated to transforming Sri Lanka through the power of Agentic AI,
-            intelligent automation, and mission-critical software systems.
+            The Center for Intelligent Workflow Automation (CIWA) operates under
+            the Faculty of Computing at General Sir John Kotelawala Defence
+            University. We specialize in real-world process automation through
+            cutting-edge technologies including Deep Learning, Large Language
+            Models (LLMs), Intelligent Chatbots, Ontological Modelling, and
+            Knowledge Engineering. Our research bridges the gap between
+            theoretical AI advancements and practical applications that transform
+            industries and enhance operational efficiency across defense,
+            healthcare, public administration, and enterprise sectors.
           </motion.p>
         </div>
       </section>
