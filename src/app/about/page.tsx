@@ -31,7 +31,7 @@ const teamMembers = [
     name: "Dr. Kaneeka Vidanage",
     role: "Director & Principal Researcher",
     area: "Ontology Engineering & Semantic Web, Automated Software Engineering, Computational Intelligence in Workflows, Computer Vision, NLP Automation",
-    photo: "/team/kaneekas.jpeg",
+    photo: "/team/kaneekas.jpg",
     linkedin: "https://www.linkedin.com/in/kaneeka-vidanage-902a7292/",
     github: null,
   },
