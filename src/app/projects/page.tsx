@@ -17,30 +17,30 @@ import Link from "next/link";
 const projects = [
   {
     icon: FileText,
-    title: "KDU Exam Division Portal",
-    subtitle: "Digital Transformation for Academic Administration",
+    title: "Workflow Optimization",
+    subtitle: "Case Study: KDU Exam Portal",
     description:
-      "A comprehensive workflow automation system for KDU's Examination Division that digitizes the entire exam lifecycle — from paper setting to result publication. The system has reduced administrative time by 40% and eliminated paper-based bottlenecks.",
-    impact: "40% reduction in admin time",
+      "End-to-end workflow redesign and automation for academic operations. The KDU Exam Portal delivered a 40% efficiency gain by digitizing the entire exam lifecycle and removing manual bottlenecks.",
+    impact: "40% efficiency gain",
     tech: ["Next.js", "Python", "PostgreSQL", "Workflow Engine"],
     status: "Deployed",
-    category: "Workflow Automation",
+    category: "Workflow Optimization",
     metrics: [
-      { icon: BarChart2, label: "Admin Time Reduced", value: "40%" },
-      { icon: Users, label: "Users Served", value: "500+" },
-      { icon: Clock, label: "Processing Speed", value: "3× faster" },
+      { icon: BarChart2, label: "Efficiency Gain", value: "40%" },
+      { icon: Users, label: "Operators Enabled", value: "500+" },
+      { icon: Clock, label: "Cycle Time", value: "3x faster" },
     ],
   },
   {
     icon: Eye,
-    title: "ViDocX Companion",
-    subtitle: "Real-Time Academic Accessibility for Visually Impaired Students",
+    title: "Assistive Tech",
+    subtitle: "Product: ViDocX",
     description:
-      "An AI-powered document reader and classroom companion designed specifically for visually impaired students. ViDocX converts printed and digital materials into structured, navigable audio with context-aware summaries — published in PeerJ 2026.",
-    impact: "Published in PeerJ 2026",
+      "AI-driven academic accessibility for visually impaired learners. ViDocX transforms documents into structured audio with context-aware summaries for real-time classroom support.",
+    impact: "Academic accessibility at scale",
     tech: ["Computer Vision", "TTS Engine", "OCR", "React Native"],
     status: "Live",
-    category: "Assistive Technology",
+    category: "Assistive Tech",
     metrics: [
       { icon: Users, label: "Students Supported", value: "120+" },
       { icon: FileText, label: "Documents Processed", value: "10K+" },
@@ -49,50 +49,34 @@ const projects = [
   },
   {
     icon: Headphones,
-    title: "VR for the Deaf",
-    subtitle: "Immersive Learning via Gesture Recognition",
+    title: "Immersive Learning",
+    subtitle: "Product: VR Environments for the Deaf",
     description:
-      "A virtual reality learning environment engineered for deaf and hard-of-hearing students. The platform uses MediaPipe-based gesture recognition to translate sign language into interactive classroom content, enabling full curriculum participation without audio dependency.",
-    impact: "Full curriculum accessibility",
+      "Immersive learning environments for deaf and hard-of-hearing learners, using gesture recognition to translate sign language into interactive content without audio dependency.",
+    impact: "Inclusive curriculum delivery",
     tech: ["Unity 3D", "MediaPipe", "Sign Language AI", "Edge ML"],
     status: "Beta",
-    category: "Assistive Technology",
+    category: "Immersive Learning",
     metrics: [
-      { icon: Users, label: "Beta Users", value: "45" },
+      { icon: Users, label: "Pilot Users", value: "45" },
       { icon: BarChart2, label: "Sign Recognition", value: "89%" },
       { icon: Clock, label: "Latency", value: "<120ms" },
     ],
   },
   {
     icon: TrendingUp,
-    title: "National Crop Price Agent",
-    subtitle: "Predictive Agent for Agricultural Market Intelligence",
+    title: "Strategic Automation",
+    subtitle: "Product: National Crop Pricing and Wildlife Mitigation Agents",
     description:
-      "A multi-agent economic AI system that analyzes regional supply chains, weather data, and historical market trends to predict crop price fluctuations. The system delivers real-time alerts and market reports directly to smallholder farmers via SMS and web.",
-    impact: "Real-time market intelligence",
+      "Multi-agent systems delivering market intelligence, crop pricing guidance, and wildlife mitigation alerts for national resilience across agriculture and conservation.",
+    impact: "National-scale decision support",
     tech: ["Multi-Agent AI", "Time Series ML", "SMS Gateway", "Data Pipeline"],
     status: "In Development",
-    category: "Agri-Economic AI",
+    category: "Strategic Automation",
     metrics: [
       { icon: BarChart2, label: "Prediction Accuracy", value: "78%" },
-      { icon: Users, label: "Farmer Families", value: "200+" },
-      { icon: TrendingUp, label: "Crops Monitored", value: "12" },
-    ],
-  },
-  {
-    icon: Lock,
-    title: "Defence Ministry Workflow Suite",
-    subtitle: "Secure Automation for Ministry Operations",
-    description:
-      "A classified, air-gapped workflow automation suite developed for Sri Lanka's Ministry of Defence. The system streamlines document routing, approval chains, and logistics coordination using secure on-premise AI models with zero external connectivity.",
-    impact: "Ministry-grade security",
-    tech: ["Air-Gapped AI", "Secure Workflow", "Encrypted Storage", "On-Premise LLM"],
-    status: "Classified",
-    category: "Defence & Strategic AI",
-    metrics: [
-      { icon: Lock, label: "Security Level", value: "Top Secret" },
-      { icon: Users, label: "Users", value: "Classified" },
-      { icon: BarChart2, label: "Uptime SLA", value: "99.99%" },
+      { icon: Users, label: "Families Reached", value: "200+" },
+      { icon: TrendingUp, label: "Regions Covered", value: "12" },
     ],
   },
 ];
@@ -106,10 +90,10 @@ const statusConfig: Record<string, { color: string; bg: string }> = {
 };
 
 const categoryColors: Record<string, string> = {
-  "Workflow Automation": "text-slate-300",
-  "Assistive Technology": "text-blue-300",
-  "Agri-Economic AI": "text-green-300",
-  "Defence & Strategic AI": "text-faculty-red",
+  "Workflow Optimization": "text-slate-300",
+  "Assistive Tech": "text-blue-300",
+  "Immersive Learning": "text-amber-300",
+  "Strategic Automation": "text-faculty-red",
 };
 
 export default function ProjectsPage() {
@@ -125,7 +109,7 @@ export default function ProjectsPage() {
             className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-4 block"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Project Portfolio
+            Services and Solutions
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +118,7 @@ export default function ProjectsPage() {
             className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-100 leading-tight max-w-4xl mb-5"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Where AI meets{" "}
+            Boutique builds for{" "}
             <span className="text-gradient">real-world impact.</span>
           </motion.h1>
           <motion.p
@@ -143,8 +127,8 @@ export default function ProjectsPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed"
           >
-            From university campuses to national defence infrastructure — our projects
-            are deployed, measured, and built to last.
+            We deliver focused, high-assurance solutions for institutions that need
+            measurable outcomes, not prototypes.
           </motion.p>
         </div>
       </section>
@@ -252,14 +236,14 @@ export default function ProjectsPage() {
             className="text-center"
           >
             <p className="text-slate-400 text-base max-w-xl mx-auto mb-6">
-              Interested in adopting an IWAC solution or commissioning a bespoke AI
+              Interested in adopting a CIWA solution or commissioning a bespoke AI
               system for your organization?
             </p>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 px-6 py-3 glass glow-border text-slate-200 text-sm font-semibold rounded-xl hover:text-white transition-colors duration-200"
             >
-              Contact the Team <ArrowUpRight size={15} />
+              Discuss a Project <ArrowUpRight size={15} />
             </Link>
           </motion.div>
         </div>

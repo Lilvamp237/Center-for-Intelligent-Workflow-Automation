@@ -9,10 +9,10 @@ import MagneticButton from "@/components/MagneticButton";
 import Card from "@/components/Card";
 
 const stats = [
-  { value: "4+", label: "Active Research Agents" },
-  { value: "6+", label: "Live Projects" },
+  { value: "3", label: "Core Lab Leads" },
+  { value: "4", label: "Signature Solutions" },
   { value: "3", label: "Publications (2026)" },
-  { value: "100%", label: "National Impact Focus" },
+  { value: "100%", label: "High-Assurance Focus" },
 ];
 
 const featureCards = [
@@ -65,7 +65,7 @@ export default function HomePage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-faculty-red opacity-75" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-faculty-red" />
           </span>
-          KDU Research Lab · Est. 2023 · Sri Lanka
+          Independent AI Lab · KDU Heritage · Sri Lanka
         </motion.div>
 
         {/* Main headline */}
@@ -77,11 +77,11 @@ export default function HomePage() {
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           <TextScramble
-            text="Automating the Future."
+            text="The Frontier of Agentic AI."
             className="text-gradient red-glow block"
             delay={300}
           />
-          <span className="text-slate-100 block mt-2">Securing the Nation.</span>
+          <span className="text-slate-100 block mt-2">Elite workflows, engineered.</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -91,12 +91,8 @@ export default function HomePage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-10"
         >
-          The{" "}
-          <span className="text-slate-200 font-medium">
-            Intelligent Workflow Automation Center (IWAC)
-          </span>{" "}
-          at KDU is a pioneer in Agentic AI and Mission-Critical Software. We bridge
-          the gap between academic theory and national-scale impact.
+          An independent, research-driven AI lab engineering high-assurance workflows
+          for the most complex challenges in Sri Lanka and beyond.
         </motion.p>
 
         {/* CTA buttons */}
@@ -107,8 +103,8 @@ export default function HomePage() {
           className="flex flex-col sm:flex-row items-center gap-4 mb-16"
         >
           <MagneticButton className="group flex items-center gap-2 px-6 py-3 bg-faculty-red hover:bg-faculty-red-dark text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-[0_0_24px_rgba(230,57,70,0.35)] hover:shadow-[0_0_36px_rgba(230,57,70,0.55)]">
-            <Link href="/research" className="flex items-center gap-2">
-              Explore Our Research
+            <Link href="/about" className="flex items-center gap-2">
+              Explore the Lab
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform duration-200"
@@ -118,7 +114,7 @@ export default function HomePage() {
 
           <MagneticButton className="group flex items-center gap-2 px-6 py-3 glass glow-border text-slate-200 text-sm font-semibold rounded-xl hover:text-white transition-colors duration-200">
             <Link href="/projects" className="flex items-center gap-2">
-              View Projects
+              Discuss a Project
               <ChevronRight
                 size={16}
                 className="group-hover:translate-x-0.5 transition-transform duration-200"

@@ -6,11 +6,10 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, MouseEvent } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Lab" },
   { href: "/research", label: "Research" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "Contact" },
 ];
 
 function MagneticWrapper({
@@ -72,7 +71,7 @@ export default function Navbar() {
                 IWAC
               </span>
               <span className="text-slate-500 text-[10px] tracking-widest uppercase">
-                KDU Lab
+                Independent Lab
               </span>
             </div>
           </Link>
@@ -83,7 +82,7 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <li key={link.href}>
+              <li key={`${link.href}-${link.label}`}>
                 <Link
                   href={link.href}
                   className={`relative px-4 py-2.5 text-sm rounded-md block transition-colors duration-200 ${
@@ -109,7 +108,7 @@ export default function Navbar() {
         {/* CTA */}
         <MagneticWrapper>
           <Link
-            href="/research"
+            href="/projects"
             className="hidden md:flex items-center gap-2 px-4 py-2 text-sm border border-faculty-red/35 text-faculty-red rounded-lg hover:bg-faculty-red/10 hover:border-faculty-red/60 transition-all duration-200"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
@@ -117,7 +116,7 @@ export default function Navbar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-faculty-red opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-faculty-red" />
             </span>
-            Live Research
+            Discuss a Project
           </Link>
         </MagneticWrapper>
 

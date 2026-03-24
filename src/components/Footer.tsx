@@ -5,21 +5,19 @@ const footerLinks = [
   {
     title: "Explore",
     links: [
-      { href: "/", label: "Home" },
-      { href: "/about", label: "About IWAC" },
-      { href: "/research", label: "Research Areas" },
-      { href: "/projects", label: "Our Projects" },
-      { href: "/blog", label: "Blog & Insights" },
+      { href: "/about", label: "Lab" },
+      { href: "/research", label: "Research" },
+      { href: "/projects", label: "Projects" },
+      { href: "/about", label: "Contact" },
     ],
   },
   {
     title: "Research",
     links: [
       { href: "/research", label: "Agentic AI" },
-      { href: "/research", label: "Assistive Tech (ViDocX)" },
-      { href: "/research", label: "Defence & Strategic AI" },
-      { href: "/research", label: "Agri-Economic AI" },
-      { href: "/research", label: "HWC Mitigation" },
+      { href: "/research", label: "Assistive Tech" },
+      { href: "/research", label: "Strategic Automation" },
+      { href: "/research", label: "Immersive Systems" },
     ],
   },
 ];
@@ -48,14 +46,14 @@ export default function Footer() {
                   IWAC
                 </span>
                 <span className="text-slate-500 text-[10px] tracking-widest uppercase">
-                  KDU Lab
+                  Independent Lab
                 </span>
               </div>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Pioneering Agentic AI and Mission-Critical Software. Bridging academic
-              theory and national-scale impact.
-            </p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Founded by researchers from KDU. Operating at the intersection of
+                intelligence and impact.
+              </p>
             <div className="flex items-center gap-2 text-slate-500 text-xs mb-2">
               <MapPin size={12} className="text-faculty-red flex-shrink-0" />
               <span>KDU Campus, Ratmalana, Sri Lanka</span>
@@ -135,12 +133,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.05] pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-slate-500 text-xs">
-            © 2026 IWAC — Intelligent Workflow Automation Center, KDU. All rights
+            © 2026 IWAC - Intelligent Workflow Automation Center, KDU. All rights
             reserved.
           </p>
           <p className="text-slate-600 text-xs font-mono">
-            Built with{" "}
-            <span className="text-faculty-red">Agentic AI</span>
+            Status: <span className="text-faculty-red">Open for Collaboration</span>
           </p>
         </div>
       </div>

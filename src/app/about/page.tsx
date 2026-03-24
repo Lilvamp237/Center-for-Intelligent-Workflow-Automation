@@ -29,24 +29,24 @@ const missionPillars = [
 const teamMembers = [
   {
     name: "Dr. Kaneeka Vidanage",
-    role: "Director & Principal Researcher",
-    area: "Ontology Engineering & Semantic Web, Automated Software Engineering, Computational Intelligence in Workflows, Computer Vision, NLP Automation",
+    role: "Research Lead & Mentor",
+    area: "Specialist in Ontology and Knowledge Engineering",
     photo: "/team/kaneekas.jpg",
     linkedin: "https://www.linkedin.com/in/kaneeka-vidanage-902a7292/",
     github: null,
   },
   {
     name: "Dinuka Wickramasinghe",
-    role: "Junior Researcher",
-    area: "Agentic AI, Autonomous Systems, Accessibility Technology, High Performance Computing",
+    role: "Head of Agentic Development",
+    area: "Specialist in Multi-Agent Systems and HPC",
     photo: "/team/dinukas.png",
     linkedin: "https://www.linkedin.com/in/dinuka-wickramasinghe/",
     github: "https://github.com/Wicky2002",
   },
   {
-    name: "Sumudu Ratnayake",
-    role: "Junior Researcher",
-    area: "Multi-Agent Systems, Agentic AI, Immersive Technologies, Accessibility Technology",
+    name: "Sumudu",
+    role: "Lead for Immersive Systems",
+    area: "Specialist in VR, CV, and Inclusive UX",
     photo: "/team/sumudus.png",
     linkedin: "https://www.linkedin.com/in/sumudu-ratnayake-782b90235/",
     github: "https://github.com/Lilvamp237",
@@ -92,15 +92,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-slate-200 text-base sm:text-lg max-w-4xl leading-relaxed"
           >
-            The Center for Intelligent Workflow Automation (CIWA) operates under
-            the Faculty of Computing at General Sir John Kotelawala Defence
-            University. We specialize in real-world process automation through
-            cutting-edge technologies including Deep Learning, Large Language
-            Models (LLMs), Intelligent Chatbots, Ontological Modelling, and
-            Knowledge Engineering. Our research bridges the gap between
-            theoretical AI advancements and practical applications that transform
-            industries and enhance operational efficiency across defense,
-            healthcare, public administration, and enterprise sectors.
+            The Center for Intelligent Workflow Automation (CIWA) operates under the Faculty of Computing at General Sir John Kotelawala Defence University. We specialize in real-world process automation through cutting-edge technologies including Deep Learning, Large Language Models (LLMs), Intelligent Chatbots, Ontological Modelling, and Knowledge Engineering. Our research bridges the gap between theoretical AI advancements and practical applications that transform industries and enhance operational efficiency across defense, healthcare, public administration, and enterprise sectors.
           </motion.p>
         </div>
       </section>
@@ -264,13 +256,13 @@ export default function AboutPage() {
               className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              The Team
+              The Trio
             </span>
             <h2
               className="text-3xl sm:text-4xl font-black text-slate-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              The minds behind the mission.
+              The specialists behind the lab.
             </h2>
           </motion.div>
 
