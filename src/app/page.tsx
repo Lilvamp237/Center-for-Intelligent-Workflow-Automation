@@ -1,8 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Brain, Shield, Zap, Users, BookOpen, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  Shield,
+  Zap,
+  Users,
+  BookOpen,
+  ChevronRight,
+  Network,
+  Database,
+  Cpu,
+  Lock,
+} from "lucide-react";
 import TextScramble from "@/components/TextScramble";
 import TerminalStatus from "@/components/TerminalStatus";
 import MagneticButton from "@/components/MagneticButton";
@@ -46,7 +59,46 @@ const featureCards = [
   },
 ];
 
+const techStack = [
+  {
+    icon: Network,
+    title: "Core Engine",
+    items: ["Agentic RAG", "LangGraph", "Multi-Agent Orchestration"],
+  },
+  {
+    icon: Database,
+    title: "Knowledge Layer",
+    items: ["Neo4j (Knowledge Graphs)", "OWL/RDF (Ontologies)", "Semantic Reasoning"],
+  },
+  {
+    icon: Cpu,
+    title: "Compute",
+    items: ["CUDA/C++ (HPC)", "TensorFlow", "PyTorch"],
+  },
+  {
+    icon: Lock,
+    title: "Deployment",
+    items: ["Secure, Air-Gapped AI", "Edge Computing", "Controlled Inference"],
+  },
+];
+
 export default function HomePage() {
+  const typewriterText = "We build agents that Reason, Act, and Deliver.";
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+    let idx = 0;
+    const interval = setInterval(() => {
+      idx += 1;
+      setTypedText(typewriterText.slice(0, idx));
+      if (idx >= typewriterText.length) {
+        clearInterval(interval);
+      }
+    }, 38);
+
+    return () => clearInterval(interval);
+  }, [typewriterText]);
+
   return (
     <div className="min-h-screen">
       {/* ── Hero Section ── */}
@@ -65,8 +117,18 @@ export default function HomePage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-faculty-red opacity-75" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-faculty-red" />
           </span>
-          Independent AI Lab · KDU Heritage · Sri Lanka
+          Independent R&D Studio · KDU Heritage · Sri Lanka
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-faculty-red text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-3"
+          style={{ fontFamily: "var(--font-space-grotesk)" }}
+        >
+          Engineering the Next Generation of Agentic Systems
+        </motion.p>
 
         {/* Main headline */}
         <motion.h1
@@ -91,8 +153,8 @@ export default function HomePage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-10"
         >
-          An independent, research-driven AI lab engineering high-assurance workflows
-          for the most complex challenges in Sri Lanka and beyond.
+          {typedText}
+          <span className="inline-block w-2 h-5 bg-faculty-red ml-1 align-middle animate-pulse" />
         </motion.p>
 
         {/* CTA buttons */}
@@ -103,8 +165,8 @@ export default function HomePage() {
           className="flex flex-col sm:flex-row items-center gap-4 mb-16"
         >
           <MagneticButton className="group flex items-center gap-2 px-6 py-3 bg-faculty-red hover:bg-faculty-red-dark text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-[0_0_24px_rgba(230,57,70,0.35)] hover:shadow-[0_0_36px_rgba(230,57,70,0.55)]">
-            <Link href="/about" className="flex items-center gap-2">
-              Explore the Lab
+            <Link href="/contact" className="flex items-center gap-2">
+              Deploy an Agentic System
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform duration-200"
@@ -113,8 +175,8 @@ export default function HomePage() {
           </MagneticButton>
 
           <MagneticButton className="group flex items-center gap-2 px-6 py-3 glass glow-border text-slate-200 text-sm font-semibold rounded-xl hover:text-white transition-colors duration-200">
-            <Link href="/projects" className="flex items-center gap-2">
-              Discuss a Project
+            <Link href="/research" className="flex items-center gap-2">
+              View our Research
               <ChevronRight
                 size={16}
                 className="group-hover:translate-x-0.5 transition-transform duration-200"
@@ -221,6 +283,56 @@ export default function HomePage() {
                 >
                   Learn more <ArrowRight size={12} />
                 </Link>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tech Stack ── */}
+      <section className="py-24 px-5 sm:px-8 border-t border-white/[0.04]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 max-w-2xl"
+          >
+            <span
+              className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              The Tech Stack
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-100 leading-tight"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              The muscle behind our
+              <span className="text-gradient"> agentic systems.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {techStack.map((stack, idx) => (
+              <Card key={stack.title} index={idx}>
+                <div className="w-10 h-10 bg-faculty-red/10 border border-faculty-red/25 rounded-lg flex items-center justify-center mb-4">
+                  <stack.icon size={18} className="text-faculty-red" />
+                </div>
+                <h3
+                  className="text-slate-100 font-semibold text-base mb-3"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  {stack.title}
+                </h3>
+                <ul className="space-y-2 text-slate-400 text-sm">
+                  {stack.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-faculty-red mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </Card>
             ))}
           </div>

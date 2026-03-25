@@ -5,19 +5,19 @@ const footerLinks = [
   {
     title: "Explore",
     links: [
-      { href: "/about", label: "Lab" },
+      { href: "/about", label: "The Lab" },
+      { href: "/projects", label: "Solutions" },
       { href: "/research", label: "Research" },
-      { href: "/projects", label: "Projects" },
-      { href: "/about", label: "Contact" },
+      { href: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Research",
     links: [
-      { href: "/research", label: "Agentic AI" },
-      { href: "/research", label: "Assistive Tech" },
-      { href: "/research", label: "Strategic Automation" },
-      { href: "/research", label: "Immersive Systems" },
+      { href: "/research", label: "Agentic Systems" },
+      { href: "/research", label: "Knowledge Engineering" },
+      { href: "/research", label: "HPC + Multi-Agent" },
+      { href: "/research", label: "Edge + Air-Gapped" },
     ],
   },
 ];
@@ -51,8 +51,8 @@ export default function Footer() {
               </div>
             </Link>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Founded by researchers from KDU. Operating at the intersection of
-                intelligence and impact.
+                Independent. Agile. Research-first. Built by the pioneers of Agentic AI
+                in Sri Lanka.
               </p>
             <div className="flex items-center gap-2 text-slate-500 text-xs mb-2">
               <MapPin size={12} className="text-faculty-red flex-shrink-0" />

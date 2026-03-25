@@ -74,7 +74,7 @@ export default function AboutPage() {
             className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-4 block"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            About IWAC
+            The Lab
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -83,8 +83,8 @@ export default function AboutPage() {
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-slate-100 max-w-4xl mb-6"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Built for Impact.{" "}
-            <span className="text-gradient">Designed for the Nation.</span>
+            Independent. Agile.{" "}
+            <span className="text-gradient">Research-first.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -92,8 +92,34 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-slate-200 text-base sm:text-lg max-w-4xl leading-relaxed"
           >
-            The Center for Intelligent Workflow Automation (CIWA) operates under the Faculty of Computing at General Sir John Kotelawala Defence University. We specialize in real-world process automation through cutting-edge technologies including Deep Learning, Large Language Models (LLMs), Intelligent Chatbots, Ontological Modelling, and Knowledge Engineering. Our research bridges the gap between theoretical AI advancements and practical applications that transform industries and enhance operational efficiency across defense, healthcare, public administration, and enterprise sectors.
+            We are an independent boutique research studio engineering agentic systems
+            that move beyond prototypes into real-world operational excellence.
           </motion.p>
+        </div>
+      </section>
+
+      {/* ── Heritage Block ── */}
+      <section className="px-5 sm:px-8 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass glow-border rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-faculty-red/[0.06] via-transparent to-transparent pointer-events-none" />
+            <div className="relative z-10">
+              <span
+                className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-4 block"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                Origin and Academic Foundation
+              </span>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                The Center for Intelligent Workflow Automation (CIWA) operates under the Faculty of Computing at General Sir John Kotelawala Defence University. We specialize in real-world process automation through cutting-edge technologies including Deep Learning, Large Language Models (LLMs), Intelligent Chatbots, Ontological Modelling, and Knowledge Engineering. Our research bridges the gap between theoretical AI advancements and practical applications that transform industries and enhance operational efficiency across defense, healthcare, public administration, and enterprise sectors.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -256,13 +282,13 @@ export default function AboutPage() {
               className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              The Trio
+              Leadership Board
             </span>
             <h2
               className="text-3xl sm:text-4xl font-black text-slate-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              The specialists behind the lab.
+              The trio leading the lab.
             </h2>
           </motion.div>
 
@@ -319,7 +345,7 @@ export default function AboutPage() {
                 {/* Info area */}
                 <div className="p-5">
                   <h3
-                    className="text-slate-100 font-semibold text-base group-hover:text-white transition-colors"
+                    className="text-slate-100 font-black uppercase tracking-[0.14em] text-sm sm:text-base group-hover:text-white transition-colors"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                   >
                     {member.name}

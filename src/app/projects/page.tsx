@@ -17,30 +17,30 @@ import Link from "next/link";
 const projects = [
   {
     icon: FileText,
-    title: "Workflow Optimization",
-    subtitle: "Case Study: KDU Exam Portal",
+    title: "Administrative Efficiency",
+    subtitle: "Case Study: Exam Division Portal",
     description:
-      "End-to-end workflow redesign and automation for academic operations. The KDU Exam Portal delivered a 40% efficiency gain by digitizing the entire exam lifecycle and removing manual bottlenecks.",
-    impact: "40% efficiency gain",
+      "A full-stack workflow automation system that digitized exam operations and eliminated manual processing bottlenecks. Built for high-volume academic administration with auditable, secure workflows.",
+    impact: "40% reduction in manual processing",
     tech: ["Next.js", "Python", "PostgreSQL", "Workflow Engine"],
     status: "Deployed",
-    category: "Workflow Optimization",
+    category: "Case Study",
     metrics: [
-      { icon: BarChart2, label: "Efficiency Gain", value: "40%" },
-      { icon: Users, label: "Operators Enabled", value: "500+" },
+      { icon: BarChart2, label: "Manual Reduction", value: "40%" },
+      { icon: Users, label: "Staff Enabled", value: "500+" },
       { icon: Clock, label: "Cycle Time", value: "3x faster" },
     ],
   },
   {
     icon: Eye,
-    title: "Assistive Tech",
-    subtitle: "Product: ViDocX",
+    title: "ViDocX",
+    subtitle: "Product: AI-Driven Accessibility",
     description:
-      "AI-driven academic accessibility for visually impaired learners. ViDocX transforms documents into structured audio with context-aware summaries for real-time classroom support.",
-    impact: "Academic accessibility at scale",
+      "AI-driven accessibility for complex academic PDFs. ViDocX converts dense documents into structured, navigable audio with context-aware summaries and real-time guidance.",
+    impact: "Accessibility for complex academic content",
     tech: ["Computer Vision", "TTS Engine", "OCR", "React Native"],
     status: "Live",
-    category: "Assistive Tech",
+    category: "Product",
     metrics: [
       { icon: Users, label: "Students Supported", value: "120+" },
       { icon: FileText, label: "Documents Processed", value: "10K+" },
@@ -48,35 +48,35 @@ const projects = [
     ],
   },
   {
-    icon: Headphones,
-    title: "Immersive Learning",
-    subtitle: "Product: VR Environments for the Deaf",
-    description:
-      "Immersive learning environments for deaf and hard-of-hearing learners, using gesture recognition to translate sign language into interactive content without audio dependency.",
-    impact: "Inclusive curriculum delivery",
-    tech: ["Unity 3D", "MediaPipe", "Sign Language AI", "Edge ML"],
-    status: "Beta",
-    category: "Immersive Learning",
-    metrics: [
-      { icon: Users, label: "Pilot Users", value: "45" },
-      { icon: BarChart2, label: "Sign Recognition", value: "89%" },
-      { icon: Clock, label: "Latency", value: "<120ms" },
-    ],
-  },
-  {
     icon: TrendingUp,
-    title: "Strategic Automation",
-    subtitle: "Product: National Crop Pricing and Wildlife Mitigation Agents",
+    title: "Eco-Stabilizer",
+    subtitle: "Product: Agricultural Price Protection",
     description:
-      "Multi-agent systems delivering market intelligence, crop pricing guidance, and wildlife mitigation alerts for national resilience across agriculture and conservation.",
-    impact: "National-scale decision support",
+      "Multi-agent models that monitor supply chains, weather, and demand signals to protect farmers from price shocks and stabilize market volatility.",
+    impact: "Market resilience for farmers",
     tech: ["Multi-Agent AI", "Time Series ML", "SMS Gateway", "Data Pipeline"],
     status: "In Development",
-    category: "Strategic Automation",
+    category: "Product",
     metrics: [
       { icon: BarChart2, label: "Prediction Accuracy", value: "78%" },
       { icon: Users, label: "Families Reached", value: "200+" },
       { icon: TrendingUp, label: "Regions Covered", value: "12" },
+    ],
+  },
+  {
+    icon: Headphones,
+    title: "Frontier Deterrence",
+    subtitle: "Product: Human-Wildlife Conflict Mitigation",
+    description:
+      "AI agents that fuse edge sensors, predictive models, and response workflows to mitigate human-wildlife conflict and protect both communities and wildlife.",
+    impact: "Proactive conflict mitigation",
+    tech: ["Edge AI", "IoT Sensing", "Predictive Models", "Alerting"],
+    status: "Pilot",
+    category: "Product",
+    metrics: [
+      { icon: Users, label: "Pilot Sites", value: "6" },
+      { icon: BarChart2, label: "Detection Rate", value: "89%" },
+      { icon: Clock, label: "Response Time", value: "<2 min" },
     ],
   },
 ];
@@ -84,16 +84,13 @@ const projects = [
 const statusConfig: Record<string, { color: string; bg: string }> = {
   Deployed: { color: "text-green-400", bg: "bg-green-400/10 border-green-400/25" },
   Live: { color: "text-blue-400", bg: "bg-blue-400/10 border-blue-400/25" },
-  Beta: { color: "text-amber-400", bg: "bg-amber-400/10 border-amber-400/25" },
+  Pilot: { color: "text-amber-400", bg: "bg-amber-400/10 border-amber-400/25" },
   "In Development": { color: "text-purple-400", bg: "bg-purple-400/10 border-purple-400/25" },
-  Classified: { color: "text-faculty-red", bg: "bg-faculty-red/10 border-faculty-red/25" },
 };
 
 const categoryColors: Record<string, string> = {
-  "Workflow Optimization": "text-slate-300",
-  "Assistive Tech": "text-blue-300",
-  "Immersive Learning": "text-amber-300",
-  "Strategic Automation": "text-faculty-red",
+  "Case Study": "text-slate-300",
+  Product: "text-blue-300",
 };
 
 export default function ProjectsPage() {
@@ -109,7 +106,7 @@ export default function ProjectsPage() {
             className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-4 block"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Services and Solutions
+            Solutions and Case Studies
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -118,8 +115,8 @@ export default function ProjectsPage() {
             className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-100 leading-tight max-w-4xl mb-5"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Boutique builds for{" "}
-            <span className="text-gradient">real-world impact.</span>
+            Solutions that{" "}
+            <span className="text-gradient">ship and scale.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -127,8 +124,8 @@ export default function ProjectsPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed"
           >
-            We deliver focused, high-assurance solutions for institutions that need
-            measurable outcomes, not prototypes.
+            Market-facing products and proven case studies engineered for institutions
+            that demand measurable outcomes.
           </motion.p>
         </div>
       </section>
@@ -236,14 +233,13 @@ export default function ProjectsPage() {
             className="text-center"
           >
             <p className="text-slate-400 text-base max-w-xl mx-auto mb-6">
-              Interested in adopting a CIWA solution or commissioning a bespoke AI
-              system for your organization?
+              Ready to deploy an agentic system or commission a bespoke solution?
             </p>
             <Link
-              href="/about"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 glass glow-border text-slate-200 text-sm font-semibold rounded-xl hover:text-white transition-colors duration-200"
             >
-              Discuss a Project <ArrowUpRight size={15} />
+              Deploy an Agentic System <ArrowUpRight size={15} />
             </Link>
           </motion.div>
         </div>

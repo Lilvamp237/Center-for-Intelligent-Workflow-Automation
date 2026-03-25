@@ -6,10 +6,10 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, MouseEvent } from "react";
 
 const navLinks = [
-  { href: "/about", label: "Lab" },
+  { href: "/about", label: "The Lab" },
+  { href: "/projects", label: "Solutions" },
   { href: "/research", label: "Research" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function MagneticWrapper({
@@ -108,7 +108,7 @@ export default function Navbar() {
         {/* CTA */}
         <MagneticWrapper>
           <Link
-            href="/projects"
+            href="/contact"
             className="hidden md:flex items-center gap-2 px-4 py-2 text-sm border border-faculty-red/35 text-faculty-red rounded-lg hover:bg-faculty-red/10 hover:border-faculty-red/60 transition-all duration-200"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
@@ -116,7 +116,7 @@ export default function Navbar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-faculty-red opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-faculty-red" />
             </span>
-            Discuss a Project
+            Deploy an Agentic System
           </Link>
         </MagneticWrapper>
 
