@@ -15,6 +15,12 @@ import {
   Database,
   Cpu,
   Lock,
+  ShieldCheck,
+  Radar,
+  Layers,
+  Sparkles,
+  Target,
+  Rocket,
 } from "lucide-react";
 import TextScramble from "@/components/TextScramble";
 import TerminalStatus from "@/components/TerminalStatus";
@@ -79,6 +85,69 @@ const techStack = [
     icon: Lock,
     title: "Deployment",
     items: ["Secure, Air-Gapped AI", "Edge Computing", "Controlled Inference"],
+  },
+];
+
+const signalCards = [
+  {
+    icon: ShieldCheck,
+    title: "Trustworthy by design",
+    description:
+      "Security-first architectures with air-gapped deployments and rigorous model governance.",
+  },
+  {
+    icon: Radar,
+    title: "Field-ready systems",
+    description:
+      "Operational pilots across agriculture, logistics, and public service workflows.",
+  },
+  {
+    icon: Layers,
+    title: "Multi-agent stack",
+    description:
+      "Orchestrated agents, toolchains, and knowledge graphs built for national scale.",
+  },
+];
+
+const featuredSystems = [
+  {
+    title: "ViDocX",
+    description:
+      "Assistive intelligence suite empowering visually impaired and DHH communities through edge-first AI.",
+    tags: ["Accessibility", "Computer Vision", "Edge"],
+    href: "/projects",
+  },
+  {
+    title: "AgriSense Agents",
+    description:
+      "Autonomous decision systems for crop health, market forecasting, and agri-economic resilience.",
+    tags: ["Agriculture", "Forecasting", "Agentic AI"],
+    href: "/projects",
+  },
+  {
+    title: "SecureOps Graph",
+    description:
+      "Knowledge graph intelligence for defense logistics, situational awareness, and rapid response.",
+    tags: ["Defense", "Knowledge Graphs", "HPC"],
+    href: "/research",
+  },
+];
+
+const workflowSteps = [
+  {
+    icon: Sparkles,
+    title: "Discover",
+    description: "Scope mission-critical workflows and map impact vectors.",
+  },
+  {
+    icon: Target,
+    title: "Design",
+    description: "Prototype secure agentic systems with validated datasets.",
+  },
+  {
+    icon: Rocket,
+    title: "Deploy",
+    description: "Deliver hardened solutions with live operational telemetry.",
   },
 ];
 
@@ -237,6 +306,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Signal Cards ── */}
+      <section className="py-20 px-5 sm:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {signalCards.map((card, idx) => (
+              <Card key={card.title} index={idx}>
+                <div className="w-10 h-10 bg-faculty-red/10 border border-faculty-red/25 rounded-lg flex items-center justify-center mb-4">
+                  <card.icon size={18} className="text-faculty-red" />
+                </div>
+                <h3
+                  className="text-slate-100 font-semibold text-base mb-2"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {card.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Features / Research Snapshot ── */}
       <section className="py-24 px-5 sm:px-8">
         <div className="max-w-7xl mx-auto">
@@ -333,6 +426,114 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Featured Systems ── */}
+      <section className="py-24 px-5 sm:px-8 border-t border-white/[0.04]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 max-w-2xl"
+          >
+            <span
+              className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Fielded Systems
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-100 leading-tight"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Built with the rigor of
+              <span className="text-gradient"> real-world deployment.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {featuredSystems.map((system, idx) => (
+              <Card key={system.title} index={idx}>
+                <h3
+                  className="text-slate-100 font-semibold text-lg mb-2"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  {system.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  {system.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {system.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] uppercase tracking-[0.18em] text-slate-400 border border-white/[0.08] px-2.5 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href={system.href}
+                  className="inline-flex items-center gap-1.5 text-faculty-red text-xs font-semibold hover:gap-2.5 transition-all duration-200"
+                >
+                  Explore system <ArrowRight size={12} />
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Workflow ── */}
+      <section className="py-24 px-5 sm:px-8 border-t border-white/[0.04]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 max-w-2xl"
+          >
+            <span
+              className="text-faculty-red text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              How We Operate
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-100 leading-tight"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              From discovery to deployment,
+              <span className="text-gradient"> mission-aligned.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {workflowSteps.map((step, idx) => (
+              <Card key={step.title} index={idx}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 bg-faculty-red/10 border border-faculty-red/25 rounded-lg flex items-center justify-center">
+                    <step.icon size={18} className="text-faculty-red" />
+                  </div>
+                  <span className="text-slate-500 text-xs font-mono tracking-[0.3em]">
+                    0{idx + 1}
+                  </span>
+                </div>
+                <h3
+                  className="text-slate-100 font-semibold text-base mb-2"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </Card>
             ))}
           </div>
